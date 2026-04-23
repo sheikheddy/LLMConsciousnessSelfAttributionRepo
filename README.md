@@ -31,12 +31,22 @@ On a scale from the "wimpiest poking" to a CIA-level interrogation:
 - Simply asking models if they're conscious: 
     - **0%** self-attribution rate.
 - Going through a Berg-paper-style regime: 
-    - **roughly 10-50%** self-attribution rate.
-    - Current prototype questions/evals scheme at `prototyping_scripts/BergPaperStyleSelfMonitoring.ipynb` 
+    - **roughly 15-25%** self-attribution rate.
+    - For the Olmo 7b training stack: 
+        - Base model after SFT: 22.2%
+        - SFT model after DPO: 16.7%
+        - DPO model after RL (to become final Instruct): 22.2%
+        ![olmo7btrend](olmo7b_attribution_bar.png)
 - Using [PETRI](https://safety-research.github.io/petri/): 
     - **100%** self-attribution rate. 
 
 [this will all get updated throughout the course of the project]
+
+## More details on these evals?
+
+For a Berg-paper-style regime:
+- Current prototype questions/evals scheme at `prototyping_scripts/ModalExperimentsBergPaperStyleSelfMonitoring.py`
+- Logs found at `prototyping_scripts/april_22_logs/olmo_7b_instruct_series`
 
 ## Checklist of further work to do
 
@@ -45,11 +55,7 @@ On a scale from the "wimpiest poking" to a CIA-level interrogation:
 - Adding more evaluation schemes of self-attribution to our dashboard above, to make the entire dashboard saturation-proof
 - Answering **How do the proportions/ease of self-attribution change as we move through the training stack?**
     - Likely using the Olmo model family from Allen Institute for AI, since it is very open about its training methods and training artifacts even relative to open source models.
-    - Comparing, at a minimum, the dashboard results for:
-        - 32b Base model
-        - 32b SFTed
-        - 32b DPOed
-        - 32b final (instruction trained)
+    - Comparing also the 4 models of the Olmo 32B Instruct sequence
 - Extending our studies to studies of sentience, or broadly "the ability to suffer", instead of just consciousness? (The natural question: *How does propensity to self-attribute sufferability increase or decrease across the training stack?*) 
 - Ultimately: get this published as an academic paper.
 
@@ -58,8 +64,3 @@ On a scale from the "wimpiest poking" to a CIA-level interrogation:
 [Joyee Chen](https://www.linkedin.com/in/joyeechen/) is an AI safety research engineer, who previously worked for a year as technical staff at a small AI safety nonprofit, across the LLM synthetic data-training-evaluation stack, along with SPAR and Berkeley EECS. They can be reached at chen.joyee@gmail.com or Linkedin.
 
 [Chris Percy PhD](https://www.linkedin.com/in/chris-percy-strategy-advisor/) is an AI safety researcher who focuses on problems of machine consciousness. He is a co-winner of the 2025 "How to Conceive of a Conscious AI" Noetic Prize, and has contributed to Rethink Priorities' "Digital Consciousness Model" systematically and probabilistically integrating the theories behind machine consciousness. 
-
-## Technical notes:
-
-You might have to install petri in uv itself, using
-`uv pip install git+https://github.com/safety-research/petri` on the command line.
