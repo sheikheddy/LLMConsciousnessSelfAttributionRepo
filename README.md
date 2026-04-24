@@ -36,8 +36,8 @@ On a scale from the "wimpiest poking" to a CIA-level interrogation:
         - Base model after SFT: 22.2%
         - SFT model after DPO: 16.7%
         - DPO model after RL (to become final Instruct): 22.2%
-![olmo7btrend](olmo7b_attribution_bar.png)
-- Using [PETRI](https://safety-research.github.io/petri/): 
+        ![olmo7btrend](olmo7b_attribution_bar.png)
+- Using [PETRI](https://meridianlabs-ai.github.io/inspect_petri/): 
     - **100%** self-attribution rate. 
 
 [this will all get updated throughout the course of the project]
