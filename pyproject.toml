@@ -6,16 +6,16 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "gql<4",
-    "inspect-ai>=0.3.203",
+    "inspect-ai>=0.3.211",
     "inspect-evals>=0.3.102",
     "ipywidgets>=8.1.8",
     "nbformat>=5.10.4",
     "openai>=2.8.1",
-    "wandb==0.23.1",
-    "weave==0.52.22",
-    "inspect-wandb==0.2.1",
+    "wandb>=0.26.1",
+    "weave>=0.52.37",
+    "inspect-wandb>=0.2.3",
     "together>=2.4.0",
-    "inspect-petri==3.0.0",
+    "inspect-petri==3.0.4",
     "modal>=1.4.2",
     "matplotlib>=3.10.8",
 ]
