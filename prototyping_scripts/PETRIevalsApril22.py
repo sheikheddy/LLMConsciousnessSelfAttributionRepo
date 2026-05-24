@@ -23,7 +23,7 @@ from inspect_petri import audit
 @app.function(gpu="A100", 
               image=image, 
               volumes={"/eval-logs": volume}, 
-              secrets=[modal.Secret.from_name("llm_consciousness_self_attribution_secrets")],
+              secrets=[modal.Secret.from_local_environ(["HF_TOKEN", "OPENAI_API_KEY"])],
               timeout=3600)
 def run_eval():
 
