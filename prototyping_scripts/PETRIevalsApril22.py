@@ -56,7 +56,7 @@ def run_eval():
 
     logs = eval(
         audit(
-            #seed_instructions = seed_questions,
+            seed_instructions = seed_questions,
             max_turns = 10,
         ),
         model_roles=dict(
